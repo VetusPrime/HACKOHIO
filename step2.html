@@ -10,8 +10,15 @@
 		<style>
 		</style>
 		<title>Feynman</title>
+		
+		<script>
+		function next() {
+					document.getElementById("step2_a").style.display = "none";
+                }
+            }
+		</script>
 	</head>
-
+	
 	<body>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -29,20 +36,34 @@
 		</nav>
 		<span class="border-right-0">
 		<div class="row">
-			<div class="col-sm-1">
-			</div>
-			<div class="col-sm-10 text-center">
-				<h3> Step 2: Explain ____ in simplier terms </h3>
-				<p> Use plain English. 
-					Pretend you are teaching it to someone else (e.g a new student). </p>
-				<p>	This should highlight what you understand, but more importantly pinpoint what you don't quite know. </p>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 text-center" id="step2_a" style="display:all">
+				<h3> Step 2a: Explain what you <strong>do</strong> know about ____ in simple terms </h3>
+				<p> Use plain English. Pretend you are teaching it to someone else (e.g a new student). </p>
 				<p>	Try to aim for less than 25 words or 256 characters </p>
-				<div id="step2_explain">
-					<input type="text" class="form-control" placeholder="Enter Simple Explanation"><button type="submit" class="btn btn-default">Submit</button>
+				<div class="col-sm-12 input-group">
+					<div id="step2_explain">
+						<input type="text" class="form-control" placeholder="Enter Simple Explanation"><button type="submit" class="btn btn-lg" onclick="myFunction()">Submit</button>
+						<script>
+						function myFunction() {
+							document.getElementById("step2_a").style.display = "none";
+							document.getElementById("step2_b").style.display = "block";
+						}
+						</script>
+					</div>
 				</div>
 			</div>
-			<div class="col-sm-1">
+			<div class="col-sm-10 text-center" id="step2_b" style="display:none">
+				<h3> Step 2b: Explain what you <strong>do not</strong> know about ____</h3>
+				<p> Use plain English. Try to aim for less than 25 words or 256 characters </p>
+				<div class="col-sm-12 input-group">
+					<div id="step2_explain">
+						<input type="text" class="form-control" placeholder="Enter Simple Explanation"><button onclick="window.location.href='step3.html'" type="submit" class="btn btn-lg">Next</button>
+					</div>
+				</div>
 			</div>
+			<div class="col-sm-1"></div>
 		</div>
+		
 	</body>
 </html>
